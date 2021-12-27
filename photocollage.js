@@ -14,7 +14,6 @@ function layoutDivide() {
       for (var n = 0; n < children.length; n++) {
         children[n].classList.add("list");
       }
-      console.log(children[5].childNodes);
       if (children.length > 5) {
         children[4].innerHTML += `<p>+${children.length - 5}件</p>`;
       }
