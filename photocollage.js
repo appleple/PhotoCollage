@@ -14,8 +14,16 @@ function layoutDivide() {
       for (var n = 0; n < children.length; n++) {
         children[n].classList.add("list");
       }
+
       if (children.length > 5) {
-        children[4].innerHTML += `<p>+${children.length - 5}件</p>`;
+        var display= children[4].childNodes;
+        for (var m = 0;m < display.length; m++){
+          if(display[m].nodeName === "#text") {
+            children[4].removeChild(display[m]);//textノードを削除
+          };
+        };
+        display[0].innerHTML += `<p>+${children.length - 5}件</p>`;
+        console.log(display);
       }
     }
   }
