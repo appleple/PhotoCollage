@@ -1,0 +1,402 @@
+/*
+この初期に用意されている CSS は削除して大丈夫です。
+*/
+.title {
+    background-color: black;
+    color: white;
+    padding: 10px;
+  }
+  
+  .parents-layout {
+    position: relative;
+    width: 50%;
+  }
+  
+  .parents-layout::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+  
+  .js-photocollage {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    gap: 4px;
+    height: -webkit-fill-available;
+  }
+  
+  .js-photocollage .list:nth-child(n + 6) {
+    display: none;
+  }
+  
+  .js-photocollage img {
+    display: block;
+    object-fit: cover;
+    object-position: 50% 0%;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .parents-layout:nth-of-type(1) .js-photocollage {
+    display: grid;
+    grid-template:
+      "itemA" 1fr
+      "itemB" 1fr
+      /1fr;
+  }
+  .js-photocollage:nth-of-type(1) .list {
+    position: relative;
+    width: 100%;
+    padding-bottom: 49.662%;
+  }
+  
+  .js-photocollage:nth-of-type(1) img {
+    position: absolute;
+    top: 0;
+  }
+  
+  .parents-layout:nth-of-type(1) .list:nth-of-type(1) {
+    grid-area: itemA;
+  }
+  
+  .parents-layout:nth-of-type(1) .list:nth-of-type(2) {
+    grid-area: itemB;
+  }
+  
+  .parents-layout:nth-of-type(2) .js-photocollage {
+    display: grid;
+    grid-template:
+      "itemC itemD" 1fr
+      / 1fr 1fr;
+  }
+  
+  .parents-layout:nth-of-type(2) .list {
+    position: relative;
+    width: 100%;
+    padding-bottom: 200%;
+  }
+  
+  .parents-layout:nth-of-type(2) img {
+    position: absolute;
+    top: 0;
+  }
+  
+  .parents-layout:nth-of-type(2) .list:nth-of-type(1) {
+    grid-area: itemC;
+  }
+  
+  .parents-layout:nth-of-type(2) .list:nth-of-type(2) {
+    grid-area: itemD;
+  }
+  
+  .parents-layout:nth-of-type(3) .js-photocollage {
+    display: grid;
+    grid-template:
+      "itemE itemE" 2fr
+      "itemF itemG" 1fr
+      / 1fr 1fr;
+  }
+  
+  .parents-layout:nth-of-type(3) .list {
+    position: relative;
+    width: 100%;
+    padding-bottom: 65%;
+  }
+  
+  .parents-layout:nth-of-type(3) img {
+    position: absolute;
+    top: 0;
+  }
+  
+  .parents-layout:nth-of-type(3) .list:nth-of-type(1) {
+    grid-area: itemE;
+  }
+  
+  .parents-layout:nth-of-type(3) .list:nth-of-type(2) {
+    grid-area: itemF;
+  }
+  
+  .parents-layout:nth-of-type(3) .list:nth-of-type(3) {
+    grid-area: itemG;
+  }
+  
+  .parents-layout:nth-of-type(4) .js-photocollage {
+    display: grid;
+    grid-template:
+      "itemH itemI" 1fr
+      "itemH itemJ" 1fr
+      / 2fr 1fr;
+  }
+  
+  .parents-layout:nth-of-type(4) .list {
+    position: relative;
+    width: 100%;
+    padding-bottom: 150%;
+  }
+  
+  .parents-layout:nth-of-type(4) img {
+    position: absolute;
+    top: 0;
+  }
+  
+  .parents-layout:nth-of-type(4) .list:nth-of-type(1) {
+    grid-area: itemH;
+  }
+  
+  .parents-layout:nth-of-type(4) .list:nth-of-type(2) {
+    grid-area: itemI;
+  }
+  
+  .parents-layout:nth-of-type(4) .list:nth-of-type(3) {
+    grid-area: itemJ;
+  }
+  
+  .parents-layout:nth-of-type(5) .js-photocollage {
+    display: grid;
+    grid-template:
+      "itemK itemK" 1fr
+      "itemL itemM" 1fr
+      / 1fr 1fr;
+  }
+  
+  .parents-layout:nth-of-type(5) .list {
+    position: relative;
+    width: 100%;
+    padding-bottom: 50%;
+  }
+  
+  .parents-layout:nth-of-type(5) img {
+    position: absolute;
+    top: 0;
+  }
+  
+  .parents-layout:nth-of-type(5) .list:nth-of-type(1) {
+    grid-area: itemK;
+  }
+  
+  .parents-layout:nth-of-type(5) .list:nth-of-type(2) {
+    grid-area: itemL;
+  }
+  
+  .parents-layout:nth-of-type(5) .list:nth-of-type(3) {
+    grid-area: itemM;
+  }
+  
+  .parents-layout:nth-of-type(6) .js-photocollage {
+    display: grid;
+    grid-template:
+      "itemN itemN itemN" 2fr
+      "itemO itemP itemQ" 1fr
+      / 1fr 1fr 1fr;
+  }
+  
+  .parents-layout:nth-of-type(6) .list {
+    position: relative;
+    width: 100%;
+    padding-bottom: 66%;
+  }
+  
+  .parents-layout:nth-of-type(6) img {
+    position: absolute;
+    top: 0;
+  }
+  
+  .parents-layout:nth-of-type(6) .list:nth-of-type(1) {
+    grid-area: itemN;
+  }
+  
+  .parents-layout:nth-of-type(6) .list:nth-of-type(2) {
+    grid-area: itemO;
+  }
+  
+  .parents-layout:nth-of-type(6) .list:nth-of-type(3) {
+    grid-area: itemP;
+  }
+  
+  .parents-layout:nth-of-type(6) .list:nth-of-type(4) {
+    grid-area: itemQ;
+  }
+  
+  .parents-layout:nth-of-type(7) .js-photocollage {
+    display: grid;
+    grid-template:
+      "itemR itemS" 1fr
+      "itemR itemT" 1fr
+      "itemR itemU" 1fr
+      / 2fr 1fr;
+  }
+  
+  .parents-layout:nth-of-type(7) .list {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+  }
+  
+  .parents-layout:nth-of-type(7) img {
+    position: absolute;
+    top: 0;
+  }
+  
+  .parents-layout:nth-of-type(7) .list:nth-of-type(1) {
+    grid-area: itemR;
+  }
+  
+  .parents-layout:nth-of-type(7) .list:nth-of-type(2) {
+    grid-area: itemS;
+  }
+  
+  .parents-layout:nth-of-type(7) .list:nth-of-type(3) {
+    grid-area: itemT;
+  }
+  
+  .parents-layout:nth-of-type(7) .list:nth-of-type(4) {
+    grid-area: itemU;
+  }
+  
+  .parents-layout:nth-of-type(8) .js-photocollage {
+    display: grid;
+    grid-template:
+      "itemV itemW" 1fr
+      "itemX itemY" 1fr
+      / 1fr 1fr;
+  }
+  
+  .parents-layout:nth-of-type(8) .list {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+  }
+  
+  .parents-layout:nth-of-type(8) img {
+    position: absolute;
+    top: 0;
+  }
+  
+  .parents-layout:nth-of-type(8) .list:nth-of-type(1) {
+    grid-area: itemV;
+  }
+  
+  .parents-layout:nth-of-type(8) .list:nth-of-type(2) {
+    grid-area: itemW;
+  }
+  
+  .parents-layout:nth-of-type(8) .list:nth-of-type(3) {
+    grid-area: itemX;
+  }
+  
+  .parents-layout:nth-of-type(8) .list:nth-of-type(4) {
+    grid-area: itemY;
+  }
+  
+  .parents-layout:nth-of-type(9) .js-photocollage {
+    display: grid;
+    grid-template:
+      "item1 item3" 2fr
+      "item1 item4" 1fr
+      "item2 item4" 1fr
+      "item2 item5" 2fr
+      / 1fr 1fr;
+  }
+  
+  .parents-layout:nth-of-type(9) .list {
+    position: relative;
+    width: 100%;
+    padding-bottom: 66%;
+  }
+  
+  .parents-layout:nth-of-type(9) img {
+    position: absolute;
+    top: 0;
+  }
+  
+  .parents-layout:nth-of-type(9) .list:nth-of-type(1) {
+    grid-area: item1;
+  }
+  
+  .parents-layout:nth-of-type(9) .list:nth-of-type(2) {
+    grid-area: item2;
+  }
+  
+  .parents-layout:nth-of-type(9) .list:nth-of-type(3) {
+    grid-area: item3;
+  }
+  
+  .parents-layout:nth-of-type(9) .list:nth-of-type(4) {
+    grid-area: item4;
+  }
+  
+  .parents-layout:nth-of-type(9) .list:nth-of-type(5) {
+    grid-area: item5;
+  }
+  
+  .parents-layout:nth-of-type(10) .js-photocollage {
+    display: grid;
+    grid-template:
+      "item1 item3" 2fr
+      "item1 item4" 1fr
+      "item2 item4" 1fr
+      "item2 item5" 2fr
+      / 1fr 1fr;
+  }
+  
+  .parents-layout:nth-of-type(10) .list {
+    position: relative;
+    width: 100%;
+    padding-bottom: 66%;
+  }
+  
+  .parents-layout:nth-of-type(10) img {
+    position: absolute;
+    top: 0;
+  }
+  
+  .parents-layout:nth-of-type(10) .list:nth-of-type(1) {
+    grid-area: item1;
+  }
+  
+  .parents-layout:nth-of-type(10) .list:nth-of-type(2) {
+    grid-area: item2;
+  }
+  
+  .parents-layout:nth-of-type(10) .list:nth-of-type(3) {
+    grid-area: item3;
+  }
+  
+  .parents-layout:nth-of-type(10) .list:nth-of-type(4) {
+    grid-area: item4;
+  }
+  
+  .parents-layout:nth-of-type(10) .list:nth-of-type(5) {
+    grid-area: item5;
+    position: relative;
+  }
+  
+  .parents-layout:nth-of-type(10) .list:nth-of-type(5) img {
+    filter: contrast(30%);
+  }
+  
+  .parents-layout:nth-of-type(10) .list:nth-of-type(5) p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 250%;
+    color: white;
+    font-weight: bold;
+    cursor: default;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .parents-layout {
+      width: 100%;
+    }
+  }
+  
