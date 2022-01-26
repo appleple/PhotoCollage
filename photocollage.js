@@ -7,10 +7,10 @@ function layoutDivide() {
       parents.classList.add("parents-layout");
       for (var divNumber = 0; divNumber < children.length; divNumber++) {
         if (children[divNumber].nodeName === "#text") {
-          elements[i].removeChild(children[divNumber]); //textノードを削除
+          elements[i].removeChild(children[divNumber]); //子要素の配列からtextノードを削除
         }
       }
-      //#textがなくなったdivの配列
+      //#textがなくなった子要素の配列
       for (var n = 0; n < children.length; n++) {
         children[n].classList.add("list");
       }
@@ -23,7 +23,6 @@ function layoutDivide() {
           };
         };
         display[0].innerHTML += `<p>+${children.length - 5}件</p>`;
-        console.log(display);
       }
     }
   }
