@@ -47,7 +47,7 @@
     top:0;
   }
   
-  .parents-layout:nth-of-type(1) .js-photocollage {
+  .parents-layout .yoko2 {
     display: grid;
     grid-template:
       "itemA" 1fr
@@ -55,30 +55,30 @@
       /1fr;
   }
   
-  .parents-layout:nth-of-type(1) .list:nth-of-type(1) {
+  .parents-layout .yoko2 .list:nth-of-type(1) {
     grid-area: itemA;
   }
   
-  .parents-layout:nth-of-type(1) .list:nth-of-type(2) {
+  .parents-layout .yoko2 .list:nth-of-type(2) {
     grid-area: itemB;
   }
   
-  .parents-layout:nth-of-type(2) .js-photocollage {
+  .parents-layout .tate2 {
     display: grid;
     grid-template:
       "itemC itemD" 1fr
       / 1fr 1fr;
   }
   
-  .parents-layout:nth-of-type(2) .list:nth-of-type(1) {
+  .parents-layout .tate2 .list:nth-of-type(1) {
     grid-area: itemC;
   }
   
-  .parents-layout:nth-of-type(2) .list:nth-of-type(2) {
+  .parents-layout .tate2 .list:nth-of-type(2) {
     grid-area: itemD;
   }
   
-  .parents-layout:nth-of-type(3) .js-photocollage {
+  .parents-layout .yoko3 {
     display: grid;
     grid-template:
       "itemE itemE" 2fr
@@ -86,19 +86,19 @@
       / 1fr 1fr;
   }
   
-  .parents-layout:nth-of-type(3) .list:nth-of-type(1) {
+  .parents-layout .yoko3 .list:nth-of-type(1) {
     grid-area: itemE;
   }
   
-  .parents-layout:nth-of-type(3) .list:nth-of-type(2) {
+  .parents-layout .yoko3 .list:nth-of-type(2) {
     grid-area: itemF;
   }
   
-  .parents-layout:nth-of-type(3) .list:nth-of-type(3) {
+  .parents-layout .yoko3 .list:nth-of-type(3) {
     grid-area: itemG;
   }
   
-  .parents-layout:nth-of-type(4) .js-photocollage {
+  .parents-layout .tate3 {
     display: grid;
     grid-template:
       "itemH itemI" 1fr
@@ -106,19 +106,19 @@
       / 2fr 1fr;
   }
 
-  .parents-layout:nth-of-type(4) .list:nth-of-type(1) {
+  .parents-layout .tate3 .list:nth-of-type(1) {
     grid-area: itemH;
   }
   
-  .parents-layout:nth-of-type(4) .list:nth-of-type(2) {
+  .parents-layout .tate3 .list:nth-of-type(2) {
     grid-area: itemI;
   }
   
-  .parents-layout:nth-of-type(4) .list:nth-of-type(3) {
+  .parents-layout .tate3 .list:nth-of-type(3) {
     grid-area: itemJ;
   }
   
-  .parents-layout:nth-of-type(5) .js-photocollage {
+  .parents-layout .square3 {
     display: grid;
     grid-template:
       "itemK itemK" 1fr
@@ -126,19 +126,19 @@
       / 1fr 1fr;
   }
 
-  .parents-layout:nth-of-type(5) .list:nth-of-type(1) {
+  .parents-layout .square3 .list:nth-of-type(1) {
     grid-area: itemK;
   }
   
-  .parents-layout:nth-of-type(5) .list:nth-of-type(2) {
+  .parents-layout .square3 .list:nth-of-type(2) {
     grid-area: itemL;
   }
   
-  .parents-layout:nth-of-type(5) .list:nth-of-type(3) {
+  .parents-layout .square3 .list:nth-of-type(3) {
     grid-area: itemM;
   }
   
-  .parents-layout:nth-of-type(6) .js-photocollage {
+  .parents-layout .yoko4 {
     display: grid;
     grid-template:
       "itemN itemN itemN" 2fr
@@ -146,23 +146,23 @@
       / 1fr 1fr 1fr;
   }
 
-  .parents-layout:nth-of-type(6) .list:nth-of-type(1) {
+  .parents-layout .yoko4 .list:nth-of-type(1) {
     grid-area: itemN;
   }
   
-  .parents-layout:nth-of-type(6) .list:nth-of-type(2) {
+  .parents-layout .yoko4 .list:nth-of-type(2) {
     grid-area: itemO;
   }
   
-  .parents-layout:nth-of-type(6) .list:nth-of-type(3) {
+  .parents-layout .yoko4 .list:nth-of-type(3) {
     grid-area: itemP;
   }
   
-  .parents-layout:nth-of-type(6) .list:nth-of-type(4) {
+  .parents-layout .yoko4 .list:nth-of-type(4) {
     grid-area: itemQ;
   }
   
-  .parents-layout:nth-of-type(7) .js-photocollage {
+  .parents-layout .tate4 {
     display: grid;
     grid-template:
       "itemR itemS" 1fr
@@ -171,23 +171,23 @@
       / 2fr 1fr;
   }
 
-  .parents-layout:nth-of-type(7) .list:nth-of-type(1) {
+  .parents-layout .tate4 .list:nth-of-type(1) {
     grid-area: itemR;
   }
   
-  .parents-layout:nth-of-type(7) .list:nth-of-type(2) {
+  .parents-layout .tate4 .list:nth-of-type(2) {
     grid-area: itemS;
   }
   
-  .parents-layout:nth-of-type(7) .list:nth-of-type(3) {
+  .parents-layout .tate4 .list:nth-of-type(3) {
     grid-area: itemT;
   }
   
-  .parents-layout:nth-of-type(7) .list:nth-of-type(4) {
+  .parents-layout .tate4 .list:nth-of-type(4) {
     grid-area: itemU;
   }
   
-  .parents-layout:nth-of-type(8) .js-photocollage {
+  .parents-layout .square4 {
     display: grid;
     grid-template:
       "itemV itemW" 1fr
@@ -195,23 +195,23 @@
       / 1fr 1fr;
   }
 
-  .parents-layout:nth-of-type(8) .list:nth-of-type(1) {
+  .parents-layout .square4 .list:nth-of-type(1) {
     grid-area: itemV;
   }
   
-  .parents-layout:nth-of-type(8) .list:nth-of-type(2) {
+  .parents-layout .square4 .list:nth-of-type(2) {
     grid-area: itemW;
   }
   
-  .parents-layout:nth-of-type(8) .list:nth-of-type(3) {
+  .parents-layout .square4 .list:nth-of-type(3) {
     grid-area: itemX;
   }
   
-  .parents-layout:nth-of-type(8) .list:nth-of-type(4) {
+  .parents-layout .square4 .list:nth-of-type(4) {
     grid-area: itemY;
   }
   
-  .parents-layout:nth-of-type(9) .js-photocollage {
+  .parents-layout .number5 {
     display: grid;
     grid-template:
       "item1 item3" 2fr
@@ -221,27 +221,27 @@
       / 1fr 1fr;
   }
 
-  .parents-layout:nth-of-type(9) .list:nth-of-type(1) {
+  .parents-layout .number5 .list:nth-of-type(1) {
     grid-area: item1;
   }
   
-  .parents-layout:nth-of-type(9) .list:nth-of-type(2) {
+  .parents-layout .number5 .list:nth-of-type(2) {
     grid-area: item2;
   }
   
-  .parents-layout:nth-of-type(9) .list:nth-of-type(3) {
+  .parents-layout .number5 .list:nth-of-type(3) {
     grid-area: item3;
   }
   
-  .parents-layout:nth-of-type(9) .list:nth-of-type(4) {
+  .parents-layout .number5 .list:nth-of-type(4) {
     grid-area: item4;
   }
   
-  .parents-layout:nth-of-type(9) .list:nth-of-type(5) {
+  .parents-layout .number5 .list:nth-of-type(5) {
     grid-area: item5;
   }
   
-  .parents-layout:nth-of-type(10) .js-photocollage {
+  .parents-layout .more5 {
     display: grid;
     grid-template:
       "item1 item3" 2fr
@@ -251,32 +251,32 @@
       / 1fr 1fr;
   }
 
-  .parents-layout:nth-of-type(10) .list:nth-of-type(1) {
+  .parents-layout .more5 .list:nth-of-type(1) {
     grid-area: item1;
   }
   
-  .parents-layout:nth-of-type(10) .list:nth-of-type(2) {
+  .parents-layout .more5 .list:nth-of-type(2) {
     grid-area: item2;
   }
   
-  .parents-layout:nth-of-type(10) .list:nth-of-type(3) {
+  .parents-layout .more5 .list:nth-of-type(3) {
     grid-area: item3;
   }
   
-  .parents-layout:nth-of-type(10) .list:nth-of-type(4) {
+  .parents-layout .more5 .list:nth-of-type(4) {
     grid-area: item4;
   }
   
-  .parents-layout:nth-of-type(10) .list:nth-of-type(5) {
+  .parents-layout .more5 .list:nth-of-type(5) {
     grid-area: item5;
     position: relative;
   }
   
-  .parents-layout:nth-of-type(10) .list:nth-of-type(5) img {
+  .parents-layout .more5 .list:nth-of-type(5) img {
     filter: contrast(30%);
   }
   
-  .parents-layout:nth-of-type(10) .list:nth-of-type(5) p {
+  .parents-layout .more5 .list:nth-of-type(5) p {
     position: absolute;
     top: 50%;
     left: 50%;

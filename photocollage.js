@@ -10,10 +10,25 @@ function layoutDivide() {
           elements[i].removeChild(children[divNumber]); //子要素の配列からtextノードを削除
         }
       }
-      //#textがなくなった子要素の配列
+      //#textがなくなった子要素の配列)
+      let imgrow = elements[i].getElementsByTagName("img");//imgタグの配列
+      if (imgrow[0].naturalHeight < imgrow[0].naturalWidth && children.length< 5) {
+        elements[i].classList.add("yoko" + [children.length])
+      } else if (imgrow[0].naturalWidth < imgrow[0].naturalHeight && children.length< 5) {
+        //ulタグのクラス指定
+        elements[i].classList.add("tate" + [children.length]);
+      } else if(imgrow[0].naturalWidth === imgrow[0].naturalHeight && children.length< 5) {
+        //ulタグのクラス指定
+        elements[i].classList.add("square" + [children.length]);
+      } else if (children.length===5) {
+        elements[i].classList.add("number" + [children.length]);
+      } else{
+        elements[i].classList.add("more5");
+      }
+
       for (var n = 0; n < children.length; n++) {
         children[n].classList.add("list");
-      }
+      } 
 
       if (children.length > 5) {
         var display= children[4].childNodes;
