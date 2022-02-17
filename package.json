@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=development --devtool=inline-source-map",
     "build:prod": "webpack --mode=production",
-    "start": "webpack-dev-server --open --mode=development",
+    "start": "npm run watch & webpack-dev-server --mode=development --devtool=inline-source-map",
     "watch": "webpack --watch --mode=development --devtool=inline-source-map",
     "lint": "npx eslint ."
   },

@@ -1,2 +1,1 @@
-
-console.error('bbbb')
+console.log("hello typescript")
