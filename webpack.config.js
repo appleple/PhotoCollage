@@ -11,6 +11,9 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js']
   },
+  watchOptions: {
+    poll: true
+  },
   module: {
     rules: [
       {
