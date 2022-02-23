@@ -1,299 +1,331 @@
 /*
 この初期に用意されている CSS は削除して大丈夫です。
 */
+ul {
+  list-style-type: none;
+}
+
+li {
+  list-style: none;
+  margin:0 !important;
+}
+
 .title {
-    background-color: black;
-    color: white;
-    padding: 10px;
-  }
-  
-  .parents-layout {
-    position: relative;
-    width: 50%;
-  }
-  
-  .parents-layout::before {
-    content: "";
-    display: block;
-    padding-top: 100%;
-  }
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
 
-  .js-photocollage {
+.photocollage {
+  position: relative;
+  width: 100%;
+  height:100%;
+}
+
+.photocollage::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.photo-layout {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  /*gap: 4px;*/
+  height: 100%;
+}
+
+.photo-layout .photo:nth-child(n + 6) {
+  display: none;
+}
+
+.photo-layout .photo {
+  position: relative;
+}
+
+.photo-layout img {
+  display: block;
+  object-fit: cover;
+  object-position: 50% 0%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.photocollage .yoko1 {
+  display: grid;
+  grid-template:
+    "itemA" 1fr
+    /1fr;
+}
+
+.photocollage .yoko1 .photo {
+  grid-area: itemA;
+}
+
+.photocollage .tate1 {
+  display: grid;
+  grid-template:
+    "itemB" 1fr
+    /1fr;
+}
+
+.photocollage .tate1 .photo {
+  grid-area: itemB;
+}
+
+.photocollage .yoko2 {
+  display: grid;
+  grid-template:
+    "itemC" 1fr
+    "itemD" 1fr
+    /1fr;
+}
+
+.photocollage .yoko2 .photo:nth-child(1) {
+  grid-area: itemC;
+}
+
+.photocollage .yoko2 .photo:nth-of-type(2) {
+  grid-area: itemD;
+}
+
+.photocollage .tate2 {
+  display: grid;
+  grid-template:
+    "itemE itemF" 1fr
+    / 1fr 1fr;
+}
+
+.photocollage .tate2 .photo:nth-of-type(1) {
+  grid-area: itemE;
+}
+
+.photocollage .tate2 .photo:nth-of-type(2) {
+  grid-area: itemF;
+}
+
+.photocollage .yoko3 {
+  display: grid;
+  grid-template:
+    "itemG itemG" 2fr
+    "itemH itemI" 1fr
+    / 1fr 1fr;
+}
+
+.photocollage .yoko3 .photo:nth-of-type(1) {
+  grid-area: itemG;
+}
+
+.photocollage .yoko3 .photo:nth-of-type(2) {
+  grid-area: itemH;
+}
+
+.photocollage .yoko3 .photo:nth-of-type(3) {
+  grid-area: itemI;
+}
+
+.photocollage .tate3 {
+  display: grid;
+  grid-template:
+    "itemJ itemK" 1fr
+    "itemJ itemL" 1fr
+    / 2fr 1fr;
+}
+
+.photocollage .tate3 .photo:nth-of-type(1) {
+  grid-area: itemJ;
+}
+
+.photocollage .tate3 .photo:nth-of-type(2) {
+  grid-area: itemK;
+}
+
+.photocollage .tate3 .photo:nth-of-type(3) {
+  grid-area: itemL;
+}
+
+.photocollage .square3 {
+  display: grid;
+  grid-template:
+    "itemM itemM" 1fr
+    "itemN itemO" 1fr
+    / 1fr 1fr;
+}
+
+.photocollage .square3 .photo:nth-of-type(1) {
+  grid-area: itemM;
+}
+
+.photocollage .square3 .photo:nth-of-type(2) {
+  grid-area: itemN;
+}
+
+.photocollage .square3 .photo:nth-of-type(3) {
+  grid-area: itemO;
+}
+
+.photocollage .yoko4 {
+  display: grid;
+  grid-template:
+    "itemP itemP itemP" 2fr
+    "itemQ itemR itemS" 1fr
+    / 1fr 1fr 1fr;
+}
+
+.photocollage .yoko4 .photo:nth-of-type(1) {
+  grid-area: itemP;
+}
+
+.photocollage .yoko4 .photo:nth-of-type(2) {
+  grid-area: itemQ;
+}
+
+.photocollage .yoko4 .photo:nth-of-type(3) {
+  grid-area: itemR;
+}
+
+.photocollage .yoko4 .photo:nth-of-type(4) {
+  grid-area: itemS;
+}
+
+.photocollage .tate4 {
+  display: grid;
+  grid-template:
+    "itemT itemU" 1fr
+    "itemT itemV" 1fr
+    "itemT itemW" 1fr
+    / 2fr 1fr;
+}
+
+.photocollage .tate4 .photo:nth-of-type(1) {
+  grid-area: itemT;
+}
+
+.photocollage .tate4 .photo:nth-of-type(2) {
+  grid-area: itemU;
+}
+
+.photocollage .tate4 .photo:nth-of-type(3) {
+  grid-area: itemV;
+}
+
+.photocollage .tate4 .photo:nth-of-type(4) {
+  grid-area: itemW;
+}
+
+.photocollage .square4 {
+  display: grid;
+  grid-template:
+    "itemX itemY" 1fr
+    "itemZ itemZZ" 1fr
+    / 1fr 1fr;
+}
+
+.photocollage .square4 .photo:nth-of-type(1) {
+  grid-area: itemX;
+}
+
+.photocollage .square4 .photo:nth-of-type(2) {
+  grid-area: itemY;
+}
+
+.photocollage .square4 .photo:nth-of-type(3) {
+  grid-area: itemZ;
+}
+
+.photocollage .square4 .photo:nth-of-type(4) {
+  grid-area: itemZZ;
+}
+
+.photocollage .number5 {
+  display: grid;
+  grid-template:
+    "item1 item3" 2fr
+    "item1 item4" 1fr
+    "item2 item4" 1fr
+    "item2 item5" 2fr
+    / 1fr 1fr;
+}
+
+.photocollage .number5 .photo:nth-of-type(1) {
+  grid-area: item1;
+}
+
+.photocollage .number5 .photo:nth-of-type(2) {
+  grid-area: item2;
+}
+
+.photocollage .number5 .photo:nth-of-type(3) {
+  grid-area: item3;
+}
+
+.photocollage .number5 .photo:nth-of-type(4) {
+  grid-area: item4;
+}
+
+.photocollage .number5 .photo:nth-of-type(5) {
+  grid-area: item5;
+}
+
+.photocollage .more5 {
+  display: grid;
+  grid-template:
+    "item1 item3" 2fr
+    "item1 item4" 1fr
+    "item2 item4" 1fr
+    "item2 item5" 2fr
+    / 1fr 1fr;
+}
+
+.photocollage .more5 .photo:nth-of-type(1) {
+  grid-area: item1;
+}
+
+.photocollage .more5 .photo:nth-of-type(2) {
+  grid-area: item2;
+}
+
+.photocollage .more5 .photo:nth-of-type(3) {
+  grid-area: item3;
+}
+
+.photocollage .more5 .photo:nth-of-type(4) {
+  grid-area: item4;
+}
+
+.photocollage .more5 .photo:nth-of-type(5) {
+  grid-area: item5;
+  position: relative;
+}
+
+.photocollage .more5 .photo:nth-of-type(5) img {
+  filter: contrast(30%);
+}
+
+.photocollage .more5 .photo:nth-of-type(5) p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 250%;
+  color: white;
+  font-weight: bold;
+  cursor: default;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .photocollage {
     width: 100%;
-    position: absolute;
-    top: 0;
-    margin: 0;
-    list-style: none;
-    padding: 0;
-    gap: 4px;
-    height: -webkit-fill-available;
+    height:100%;
   }
-  
-  .js-photocollage .list:nth-child(n + 6) {
-    display: none;
-  }
-
-  .js-photocollage .list {
-    position:relative;
-  }
-  
-  .js-photocollage img {
-    display: block;
-    object-fit: cover;
-    object-position: 50% 0%;
-    width: 100%;
-    height: 100%;
-    position:absolute;
-    top:0;
-  }
-  
-  .parents-layout .yoko2 {
-    display: grid;
-    grid-template:
-      "itemA" 1fr
-      "itemB" 1fr
-      /1fr;
-  }
-  
-  .parents-layout .yoko2 .list:nth-of-type(1) {
-    grid-area: itemA;
-  }
-  
-  .parents-layout .yoko2 .list:nth-of-type(2) {
-    grid-area: itemB;
-  }
-  
-  .parents-layout .tate2 {
-    display: grid;
-    grid-template:
-      "itemC itemD" 1fr
-      / 1fr 1fr;
-  }
-  
-  .parents-layout .tate2 .list:nth-of-type(1) {
-    grid-area: itemC;
-  }
-  
-  .parents-layout .tate2 .list:nth-of-type(2) {
-    grid-area: itemD;
-  }
-  
-  .parents-layout .yoko3 {
-    display: grid;
-    grid-template:
-      "itemE itemE" 2fr
-      "itemF itemG" 1fr
-      / 1fr 1fr;
-  }
-  
-  .parents-layout .yoko3 .list:nth-of-type(1) {
-    grid-area: itemE;
-  }
-  
-  .parents-layout .yoko3 .list:nth-of-type(2) {
-    grid-area: itemF;
-  }
-  
-  .parents-layout .yoko3 .list:nth-of-type(3) {
-    grid-area: itemG;
-  }
-  
-  .parents-layout .tate3 {
-    display: grid;
-    grid-template:
-      "itemH itemI" 1fr
-      "itemH itemJ" 1fr
-      / 2fr 1fr;
-  }
-
-  .parents-layout .tate3 .list:nth-of-type(1) {
-    grid-area: itemH;
-  }
-  
-  .parents-layout .tate3 .list:nth-of-type(2) {
-    grid-area: itemI;
-  }
-  
-  .parents-layout .tate3 .list:nth-of-type(3) {
-    grid-area: itemJ;
-  }
-  
-  .parents-layout .square3 {
-    display: grid;
-    grid-template:
-      "itemK itemK" 1fr
-      "itemL itemM" 1fr
-      / 1fr 1fr;
-  }
-
-  .parents-layout .square3 .list:nth-of-type(1) {
-    grid-area: itemK;
-  }
-  
-  .parents-layout .square3 .list:nth-of-type(2) {
-    grid-area: itemL;
-  }
-  
-  .parents-layout .square3 .list:nth-of-type(3) {
-    grid-area: itemM;
-  }
-  
-  .parents-layout .yoko4 {
-    display: grid;
-    grid-template:
-      "itemN itemN itemN" 2fr
-      "itemO itemP itemQ" 1fr
-      / 1fr 1fr 1fr;
-  }
-
-  .parents-layout .yoko4 .list:nth-of-type(1) {
-    grid-area: itemN;
-  }
-  
-  .parents-layout .yoko4 .list:nth-of-type(2) {
-    grid-area: itemO;
-  }
-  
-  .parents-layout .yoko4 .list:nth-of-type(3) {
-    grid-area: itemP;
-  }
-  
-  .parents-layout .yoko4 .list:nth-of-type(4) {
-    grid-area: itemQ;
-  }
-  
-  .parents-layout .tate4 {
-    display: grid;
-    grid-template:
-      "itemR itemS" 1fr
-      "itemR itemT" 1fr
-      "itemR itemU" 1fr
-      / 2fr 1fr;
-  }
-
-  .parents-layout .tate4 .list:nth-of-type(1) {
-    grid-area: itemR;
-  }
-  
-  .parents-layout .tate4 .list:nth-of-type(2) {
-    grid-area: itemS;
-  }
-  
-  .parents-layout .tate4 .list:nth-of-type(3) {
-    grid-area: itemT;
-  }
-  
-  .parents-layout .tate4 .list:nth-of-type(4) {
-    grid-area: itemU;
-  }
-  
-  .parents-layout .square4 {
-    display: grid;
-    grid-template:
-      "itemV itemW" 1fr
-      "itemX itemY" 1fr
-      / 1fr 1fr;
-  }
-
-  .parents-layout .square4 .list:nth-of-type(1) {
-    grid-area: itemV;
-  }
-  
-  .parents-layout .square4 .list:nth-of-type(2) {
-    grid-area: itemW;
-  }
-  
-  .parents-layout .square4 .list:nth-of-type(3) {
-    grid-area: itemX;
-  }
-  
-  .parents-layout .square4 .list:nth-of-type(4) {
-    grid-area: itemY;
-  }
-  
-  .parents-layout .number5 {
-    display: grid;
-    grid-template:
-      "item1 item3" 2fr
-      "item1 item4" 1fr
-      "item2 item4" 1fr
-      "item2 item5" 2fr
-      / 1fr 1fr;
-  }
-
-  .parents-layout .number5 .list:nth-of-type(1) {
-    grid-area: item1;
-  }
-  
-  .parents-layout .number5 .list:nth-of-type(2) {
-    grid-area: item2;
-  }
-  
-  .parents-layout .number5 .list:nth-of-type(3) {
-    grid-area: item3;
-  }
-  
-  .parents-layout .number5 .list:nth-of-type(4) {
-    grid-area: item4;
-  }
-  
-  .parents-layout .number5 .list:nth-of-type(5) {
-    grid-area: item5;
-  }
-  
-  .parents-layout .more5 {
-    display: grid;
-    grid-template:
-      "item1 item3" 2fr
-      "item1 item4" 1fr
-      "item2 item4" 1fr
-      "item2 item5" 2fr
-      / 1fr 1fr;
-  }
-
-  .parents-layout .more5 .list:nth-of-type(1) {
-    grid-area: item1;
-  }
-  
-  .parents-layout .more5 .list:nth-of-type(2) {
-    grid-area: item2;
-  }
-  
-  .parents-layout .more5 .list:nth-of-type(3) {
-    grid-area: item3;
-  }
-  
-  .parents-layout .more5 .list:nth-of-type(4) {
-    grid-area: item4;
-  }
-  
-  .parents-layout .more5 .list:nth-of-type(5) {
-    grid-area: item5;
-    position: relative;
-  }
-  
-  .parents-layout .more5 .list:nth-of-type(5) img {
-    filter: contrast(30%);
-  }
-  
-  .parents-layout .more5 .list:nth-of-type(5) p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 250%;
-    color: white;
-    font-weight: bold;
-    cursor: default;
-    white-space: nowrap;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    padding: 0;
-    pointer-events: none;
-  }
-  
-  @media screen and (max-width: 1024px) {
-    .parents-layout {
-      width: 100%;
-    }
-  }
-  
+}
