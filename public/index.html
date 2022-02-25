@@ -16,107 +16,21 @@
     <script src="https://unpkg.com/smartphoto@latest/js/smartphoto.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const Photo = new SmartPhoto(".js-smartPhoto");
-        console.log(Photo);
-        new PhotoCollage(".yoko2",{
+        const elements = document.getElementsByClassName('js-photocollage');
+        Array.from(elements).forEach((element, index) => {
+          element.classList.add('js-photoCollage-' + index)
+          new PhotoCollage(".js-photoCollage-" + index,{
           srcAttribute: "data-src",
+          gap: "5px",
           aClass: "js-smartPhoto",
           imgClass:"js-lazy-load",
           aAttribute: {
-            "data-rel": "yoko2",
-            "data-group": "yoko2",
+            "data-group": "group-" + index,
+            "data-rel": "group-" + index,
           }
         });
-        new PhotoCollage(".tate2",{
-          srcAttribute: "data-src",
-          aClass: "js-smartPhoto",
-          imgClass:"js-lazy-load",
-          aAttribute: {
-            "data-rel": "tate2",
-            "data-group": "tate2",
-          }
-        })
-        new PhotoCollage(".yoko3",{
-          srcAttribute: "data-src",
-          aClass: "js-smartPhoto",
-          imgClass:"js-lazy-load",
-          aAttribute: {
-            "data-rel": "yoko3",
-            "data-group": "yoko3",
-          }
-        })
-        new PhotoCollage(".tate3",{
-          srcAttribute: "data-src",
-          aClass: "js-smartPhoto",
-          imgClass:"js-lazy-load",
-          aAttribute: {
-            "data-rel": "tate3",
-            "data-group": "tate3",
-          }
-        })
-        new PhotoCollage(".square3",{
-          srcAttribute: "data-src",
-          aClass: "js-smartPhoto",
-          imgClass:"js-lazy-load",
-          aAttribute: {
-            "data-rel": "square3",
-            "data-group": "square3",
-          }
-        })
-        new PhotoCollage(".yoko4",{
-          srcAttribute: "data-src",
-          aClass: "js-smartPhoto",
-          imgClass:"js-lazy-load",
-          aAttribute: {
-            "data-rel": "yoko4",
-            "data-group": "yoko4",
-          }
-        })
-        new PhotoCollage(".tate4",{
-          srcAttribute: "data-src",
-          aClass: "js-smartPhoto",
-          imgClass:"js-lazy-load",
-          aAttribute: {
-            "data-rel": "tate4",
-            "data-group": "tate4",
-          }
-        })
-        new PhotoCollage(".square4",{
-          srcAttribute: "data-src",
-          aClass: "js-smartPhoto",
-          imgClass:"js-lazy-load",
-          aAttribute: {
-            "data-rel": "square4",
-            "data-group": "square4",
-          }
-        })
-        new PhotoCollage(".tate5",{
-          srcAttribute: "data-src",
-          aClass: "js-smartPhoto",
-          imgClass:"js-lazy-load",
-          aAttribute: {
-            "data-rel": "tate5",
-            "data-group": "tate5",
-          }
-        })
-        new PhotoCollage(".tate6",{
-          srcAttribute: "data-src",
-          aClass: "js-smartPhoto",
-          imgClass:"js-lazy-load",
-          aAttribute: {
-            "data-rel": "tate6",
-            "data-group": "tate6",
-          }
-        })
-        new PhotoCollage(".tate8",{
-          srcAttribute: "data-src",
-          aClass: "js-smartPhoto",
-          imgClass:"js-lazy-load",
-          aAttribute: {
-            "data-rel": "tate8",
-            "data-group": "tate8",
-          }
-        })
+        });
+
       });
     </script>
   </head>
@@ -140,50 +54,9 @@
     </p>
 
     <h2 class="title">横長2枚の時</h2>
-    <div class="yoko2">
-      <ul>
-        <li><img data-src="https://nala-golden.com/photo/p01.jpg" width="640"　height="480"/>
-        </li>
-        <li>
-          <a
-            href="https://nala-golden.com/photo/p03.jpg"
-            class="js-smartPhoto"
-            data-group="yoko2"
-            ><img data-src="https://nala-golden.com/photo/p02.jpg" width="640"
-				    height="480"
-          /></a>
-        </li>
-      </ul>
-    </div>
-
-    <h2 class="title">縦長2枚の時</h2>
-    <div class="tate2">
-      <ul>
-        <li>
-          <a
-            href="https://nala-golden.com/photo/p11.jpg"
-            class="js-smartPhoto"
-            data-group="tate2"
-            ><img data-src="https://nala-golden.com/photo/p11.jpg" width="480"
-				    height="640"
-          /></a>
-        </li>
-        <li>
-          <a
-            href="https://nala-golden.com/photo/p12.jpg"
-            class="js-smartPhoto"
-            data-group="tate2"
-            ><img data-src="https://nala-golden.com/photo/p12.jpg" width="480"
-				    height="640"
-          /></a>
-        </li>
-      </ul>
-    </div>
-
-    <h2 class="title">横長3枚の時</h2>
-    <div class="yoko3">
-      <ul>
-        <li>
+    <div class="js-photocollage">
+      <div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p01.jpg"
             class="js-smartPhoto"
@@ -191,8 +64,8 @@
             ><img data-src="https://nala-golden.com/photo/p01.jpg" width="640"
 				    height="480"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p02.jpg"
             class="js-smartPhoto"
@@ -200,8 +73,8 @@
             ><img data-src="https://nala-golden.com/photo/p02.jpg" width="640"
 				    height="480"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p03.jpg"
             class="js-smartPhoto"
@@ -209,14 +82,80 @@
             ><img data-src="https://nala-golden.com/photo/p03.jpg" width="640"
 				    height="480"
           /></a>
-        </li>
-      </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="title">縦長2枚の時</h2>
+    <div class="js-photocollage">
+      <div>
+        <div>
+          <a
+            href="https://nala-golden.com/photo/p01.jpg"
+            class="js-smartPhoto"
+            data-group="yoko3"
+            ><img data-src="https://nala-golden.com/photo/p01.jpg" width="640"
+				    height="480"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://nala-golden.com/photo/p02.jpg"
+            class="js-smartPhoto"
+            data-group="yoko3"
+            ><img data-src="https://nala-golden.com/photo/p02.jpg" width="640"
+				    height="480"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://nala-golden.com/photo/p03.jpg"
+            class="js-smartPhoto"
+            data-group="yoko3"
+            ><img data-src="https://nala-golden.com/photo/p03.jpg" width="640"
+				    height="480"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="title">横長3枚の時</h2>
+    <div class="js-photocollage">
+      <div>
+        <div>
+          <a
+            href="https://nala-golden.com/photo/p01.jpg"
+            class="js-smartPhoto"
+            data-group="yoko3"
+            ><img data-src="https://nala-golden.com/photo/p01.jpg" width="640"
+				    height="480"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://nala-golden.com/photo/p02.jpg"
+            class="js-smartPhoto"
+            data-group="yoko3"
+            ><img data-src="https://nala-golden.com/photo/p02.jpg" width="640"
+				    height="480"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://nala-golden.com/photo/p03.jpg"
+            class="js-smartPhoto"
+            data-group="yoko3"
+            ><img data-src="https://nala-golden.com/photo/p03.jpg" width="640"
+				    height="480"
+          /></a>
+        </div>
+      </div>
     </div>
 
     <h2 class="title">縦長3枚の時</h2>
-    <div class="tate3">
-      <ul>
-        <li>
+    <div class="js-photocollage">
+      <div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p11.jpg"
             class="js-smartPhoto"
@@ -224,8 +163,8 @@
             ><img data-src="https://nala-golden.com/photo/p11.jpg" width="480"
 				    height="640"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p12.jpg"
             class="js-smartPhoto"
@@ -233,8 +172,8 @@
             ><img data-src="https://nala-golden.com/photo/p12.jpg" width="480"
 				    height="640"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p13.jpg"
             class="js-smartPhoto"
@@ -242,14 +181,14 @@
             ><img data-src="https://nala-golden.com/photo/p13.jpg" width="480"
 				    height="640"
           /></a>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
 
     <h2 class="title">正方形3枚の時</h2>
-    <div class="square3">
-      <ul>
-        <li>
+    <div class="js-photocollage">
+      <div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p21.jpg"
             class="js-smartPhoto"
@@ -257,8 +196,8 @@
             ><img data-src="https://nala-golden.com/photo/p21.jpg" width="480"
 				    height="480"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p22.jpg"
             class="js-smartPhoto"
@@ -266,8 +205,8 @@
             ><img data-src="https://nala-golden.com/photo/p22.jpg" width="480"
 				    height="480"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p23.jpg"
             class="js-smartPhoto"
@@ -275,14 +214,14 @@
             ><img data-src="https://nala-golden.com/photo/p23.jpg" width="480"
 				    height="480"
           /></a>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
 
     <h2 class="title">横長4枚の時</h2>
-    <div class="yoko4">
-      <ul>
-        <li>
+    <div class="js-photocollage">
+      <div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p01.jpg"
             class="js-smartPhoto"
@@ -290,8 +229,8 @@
             ><img data-src="https://nala-golden.com/photo/p01.jpg" width="640"
 				    height="480"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p02.jpg"
             class="js-smartPhoto"
@@ -299,8 +238,8 @@
             ><img data-src="https://nala-golden.com/photo/p02.jpg" width="640"
 				    height="480"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p03.jpg"
             class="js-smartPhoto"
@@ -308,8 +247,8 @@
             ><img data-src="https://nala-golden.com/photo/p03.jpg" width="640"
 				    height="480"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p04.jpg"
             class="js-smartPhoto"
@@ -317,14 +256,14 @@
             ><img data-src="https://nala-golden.com/photo/p04.jpg" width="640"
 				    height="480"
           /></a>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
 
     <h2 class="title">縦長4枚の時</h2>
-    <div class="tate4">
-      <ul>
-        <li>
+    <div class="js-photocollage">
+      <div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p11.jpg"
             class="js-smartPhoto"
@@ -332,8 +271,8 @@
             ><img data-src="https://nala-golden.com/photo/p11.jpg" width="480"
 				    height="640"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p12.jpg"
             class="js-smartPhoto"
@@ -341,8 +280,8 @@
             ><img data-src="https://nala-golden.com/photo/p12.jpg" width="480"
 				    height="640"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p13.jpg"
             class="js-smartPhoto"
@@ -350,8 +289,8 @@
             ><img data-src="https://nala-golden.com/photo/p13.jpg" width="480"
 				    height="640"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p14.jpg"
             class="js-smartPhoto"
@@ -359,14 +298,14 @@
             ><img data-src="https://nala-golden.com/photo/p14.jpg" width="480"
 				    height="640"
           /></a>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
 
     <h2 class="title">正方形4枚の時</h2>
-    <div class="square4">
-      <ul>
-        <li>
+    <div class="js-photocollage">
+      <div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p21.jpg"
             class="js-smartPhoto"
@@ -374,8 +313,8 @@
             ><img data-src="https://nala-golden.com/photo/p21.jpg" width="480"
 				    height="480"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p22.jpg"
             class="js-smartPhoto"
@@ -383,8 +322,8 @@
             ><img data-src="https://nala-golden.com/photo/p22.jpg" width="480"
 				    height="480"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p23.jpg"
             class="js-smartPhoto"
@@ -392,22 +331,22 @@
             ><img data-src="https://nala-golden.com/photo/p23.jpg" width="480"
 				    height="480"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p24.jpg"
             class="js-smartPhoto"
             data-group="square4"
             ><img data-src="https://nala-golden.com/photo/p24.jpg"
           /></a>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
 
     <h2 class="title">縦長5枚の時</h2>
-    <div class="tate5">
-      <ul>
-        <li>
+    <div class="js-photocollage">
+      <div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p01.jpg"
             class="js-smartPhoto"
@@ -415,8 +354,8 @@
             ><img data-src="https://nala-golden.com/photo/p01.jpg" width="480"
 				    height="640"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p02.jpg"
             class="js-smartPhoto"
@@ -424,8 +363,8 @@
             ><img data-src="https://nala-golden.com/photo/p02.jpg" width="480"
 				    height="640"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p03.jpg"
             class="js-smartPhoto"
@@ -433,8 +372,8 @@
             ><img data-src="https://nala-golden.com/photo/p03.jpg" width="480"
 				    height="640"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p04.jpg"
             class="js-smartPhoto"
@@ -442,8 +381,8 @@
             ><img data-src="https://nala-golden.com/photo/p04.jpg" width="480"
 				    height="640"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p05.jpg"
             class="js-smartPhoto"
@@ -451,14 +390,14 @@
             ><img data-src="https://nala-golden.com/photo/p05.jpg" width="480"
 				    height="640"
           /></a>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
 
     <h2 class="title">縦長6枚の時</h2>
-    <div class="tate6">
-      <ul>
-        <li>
+    <div class="js-photocollage">
+      <div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p01.jpg"
             class="js-smartPhoto"
@@ -466,8 +405,8 @@
             ><img data-src="https://nala-golden.com/photo/p01.jpg" width="480"
 				    height="640"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p02.jpg"
             class="js-smartPhoto"
@@ -475,8 +414,8 @@
             ><img data-src="https://nala-golden.com/photo/p02.jpg" width="480"
 				    height="640"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p03.jpg"
             class="js-smartPhoto"
@@ -484,8 +423,8 @@
             ><img data-src="https://nala-golden.com/photo/p03.jpg" width="480"
 				    height="640"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p04.jpg"
             class="js-smartPhoto"
@@ -493,8 +432,8 @@
             ><img data-src="https://nala-golden.com/photo/p04.jpg" width="480"
 				    height="640"
           /></a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p05.jpg"
             class="js-smartPhoto"
@@ -502,8 +441,8 @@
             ><img data-src="https://nala-golden.com/photo/p05.jpg" width="480"
 				    height="640"/>
           </a>
-        </li>
-        <li>
+        </div>
+        <div>
           <a
             href="https://nala-golden.com/photo/p06.jpg"
             class="js-smartPhoto"
@@ -511,8 +450,8 @@
             ><img data-src="https://nala-golden.com/photo/p06.jpg" width="480"
 				    height="640"
           /></a>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
 
     <!--
@@ -522,15 +461,23 @@
     -->
   <h2 class="title">縦長8枚の時</h2>
 
-   <div class="tate8">
-      <div data-src="https://nala-golden.com/photo/p01.jpg"></div>
-      <div data-src="https://nala-golden.com/photo/p02.jpg"></div>
-      <div data-src="https://nala-golden.com/photo/p03.jpg"></div>
-      <div data-src="https://nala-golden.com/photo/p04.jpg"></div>
-      <div data-src="https://nala-golden.com/photo/p05.jpg"></div>
-      <div data-src="https://nala-golden.com/photo/p05.jpg"></div>
-      <div data-src="https://nala-golden.com/photo/p05.jpg"></div>
-      <div data-src="https://nala-golden.com/photo/p05.jpg"></div>
+   <div class="js-photocollage">
+      <div data-src="https://nala-golden.com/photo/p01.jpg"width="480"
+      height="640"></div>
+      <div data-src="https://nala-golden.com/photo/p02.jpg"width="480"
+      height="640"></div>
+      <div data-src="https://nala-golden.com/photo/p03.jpg"width="480"
+      height="640"></div>
+      <div data-src="https://nala-golden.com/photo/p04.jpg"width="480"
+      height="640"></div>
+      <div data-src="https://nala-golden.com/photo/p05.jpg"width="480"
+      height="640"></div>
+      <div data-src="https://nala-golden.com/photo/p05.jpg"width="480"
+      height="640"></div>
+      <div data-src="https://nala-golden.com/photo/p05.jpg"width="480"
+      height="640"></div>
+      <div data-src="https://nala-golden.com/photo/p05.jpg"width="480"
+      height="640"></div>
     </div>
 
 

@@ -27,6 +27,7 @@ interface Photo {
 const defaults: Config = {
   gap: "5px",
   srcAttribute: "src",
+  padding:"0px"
 }
 
 class PhotoCollage {
@@ -40,14 +41,14 @@ class PhotoCollage {
     this.selector = ""
     this.settings = {}
     //ユーザーの設定が反映された配列を変える
-    this.data = Object.assign(defaults,settings)
+    this.data = Object.assign({},defaults,settings)
     //クラス指定した要素すべてを取得
     this.elements = document.querySelectorAll(selector);
     //クラス要素一つ一つに処理
     this.elements.forEach((element) => {
       element.classList.add("photocollage")
       //クラスごとの子要素にある画像をひとまとまりに格納するための配列を作る
-      const photos: Photo[] = [];
+      let photos: Photo[] = [];
       //配列の中に画像情報を格納するメソッド
       this.getSrc(element, photos);
       this.placePhoto(element,photos);
@@ -95,54 +96,60 @@ class PhotoCollage {
     while (element.firstChild) {
       element.removeChild(element.firstChild);
     }
-    const parentElement = document.createElement("ul");
+    const parentElement = document.createElement("div");
     parentElement.classList.add("photo-layout");
     photos.forEach((photo) => {
-    const childElement = document.createElement("li");
+    const childElement = document.createElement("div");
     childElement.classList.add("photo");
     //imgタグ生成
     const imgElement = document.createElement("img");
-    imgElement.classList.add(this.data.imgClass ??"");
+    if (this.data.imgClass != undefined){
+      imgElement.classList.add(this.data.imgClass);
+    }
     imgElement.setAttribute("src",photo.src);
-      if (photo.href !== "") {
-        //aタグの生成
-        const aElement = document.createElement("a");
-        aElement.classList.add(this.data.aClass ??"");
-        aElement.setAttribute("href",photo.href);
-        if (this.data.aAttribute != undefined){
-          Object.entries(this.data.aAttribute).forEach((datas) => {
-            aElement.setAttribute(datas[0],datas[1])
-          })
-        }
-        //タグ挿入
-        aElement.appendChild(imgElement);
-        childElement.appendChild(aElement);
-      }else {
-        //タグ挿入
-        childElement.appendChild(imgElement);
-      }
+    //aタグの生成
+    const aElement = document.createElement("a");
+    if (this.data.aClass != undefined){
+      aElement.classList.add(this.data.aClass);
+    }
+    if (photo.href !== "") {
+      aElement.setAttribute("href",photo.href);
+    }else {
+      aElement.setAttribute("href",photo.src);
+    }
+    if (this.data.aAttribute != undefined){
+      Object.entries(this.data.aAttribute).forEach((datas) => {
+          aElement.setAttribute(datas[0],datas[1])
+      })
+    }
+    //タグ挿入
+    aElement.appendChild(imgElement);
+    childElement.appendChild(aElement);
 
-      parentElement.appendChild(childElement);
-      element.appendChild(parentElement);
-      //画像の幅を真ん中に設定
-      parentElement.style.margin = this.data.margin ?? "";
-      parentElement.style.padding = this.data.padding ?? "";
-      parentElement.style.gap = this.data.gap ?? "";
+    parentElement.appendChild(childElement);
+    element.appendChild(parentElement);
+    //画像の幅を真ん中に設定
+    parentElement.style.margin = this.data.margin ?? "";
+    parentElement.style.padding = this.data.padding ?? "";
+    parentElement.style.gap = this.data.gap ?? "";
     });
     //ulにクラスをつけて、縦横枚数を判別
+    if (photos.length === 0){
+      return;
+    }
     if (photos[0].width >= photos[0].height && photos.length < 5) {
-      parentElement.classList.add("yoko" + [photos.length]);
+      parentElement.classList.add("photocollageYoko" + [photos.length]);
     } else if (photos[0].width < photos[0].height && photos.length < 5) {
-      parentElement.classList.add("tate" + [photos.length]);
+      parentElement.classList.add("photocollageTate" + [photos.length]);
     } else if (photos[0].width === photos[0].height && photos.length < 5) {
-      parentElement.classList.add("square" + [photos.length]);
+      parentElement.classList.add("photocollageSquare" + [photos.length]);
     } else if (photos[0].width === photos[0].height && 2 < photos.length) {
       //ここおかしい
-      parentElement.classList.add("square" + [photos.length]);
+      parentElement.classList.add("photocollageSquare" + [photos.length]);
     } else if (photos.length === 5) {
-      parentElement.classList.add("number" + [photos.length]);
+      parentElement.classList.add("photocollageNumber" + [photos.length]);
     } else {
-      parentElement.classList.add("more5");
+      parentElement.classList.add("photocollageMore5");
     }
     //ulの中のdivを指定し、六枚以上の時のpタグで残り枚数表示
     const pictures = Array.from(parentElement.children);

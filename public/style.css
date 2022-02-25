@@ -1,15 +1,6 @@
 /*
 この初期に用意されている CSS は削除して大丈夫です。
 */
-ul {
-  list-style-type: none;
-}
-
-li {
-  list-style: none;
-  margin:0 !important;
-}
-
 .title {
   background-color: black;
   color: white;
@@ -68,18 +59,18 @@ li {
   grid-area: itemA;
 }
 
-.photocollage .tate1 {
+.photocollage .photocollageTate1 {
   display: grid;
   grid-template:
     "itemB" 1fr
     /1fr;
 }
 
-.photocollage .tate1 .photo {
+.photocollage .photocollageTate1 .photo {
   grid-area: itemB;
 }
 
-.photocollage .yoko2 {
+.photocollage .photocollageYoko2 {
   display: grid;
   grid-template:
     "itemC" 1fr
@@ -87,30 +78,30 @@ li {
     /1fr;
 }
 
-.photocollage .yoko2 .photo:nth-child(1) {
+.photocollage .photocollageYoko2 .photo:nth-child(1) {
   grid-area: itemC;
 }
 
-.photocollage .yoko2 .photo:nth-of-type(2) {
+.photocollage .photocollageYoko2 .photo:nth-of-type(2) {
   grid-area: itemD;
 }
 
-.photocollage .tate2 {
+.photocollage .photocollageTate2 {
   display: grid;
   grid-template:
     "itemE itemF" 1fr
     / 1fr 1fr;
 }
 
-.photocollage .tate2 .photo:nth-of-type(1) {
+.photocollage .photocollageTate2 .photo:nth-of-type(1) {
   grid-area: itemE;
 }
 
-.photocollage .tate2 .photo:nth-of-type(2) {
+.photocollage .photocollageTate2 .photo:nth-of-type(2) {
   grid-area: itemF;
 }
 
-.photocollage .yoko3 {
+.photocollage .photocollageYoko3 {
   display: grid;
   grid-template:
     "itemG itemG" 2fr
@@ -118,19 +109,19 @@ li {
     / 1fr 1fr;
 }
 
-.photocollage .yoko3 .photo:nth-of-type(1) {
+.photocollage .photocollageYoko3 .photo:nth-of-type(1) {
   grid-area: itemG;
 }
 
-.photocollage .yoko3 .photo:nth-of-type(2) {
+.photocollage .photocollageYoko3 .photo:nth-of-type(2) {
   grid-area: itemH;
 }
 
-.photocollage .yoko3 .photo:nth-of-type(3) {
+.photocollage .photocollageYoko3 .photo:nth-of-type(3) {
   grid-area: itemI;
 }
 
-.photocollage .tate3 {
+.photocollage .photocollageTate3 {
   display: grid;
   grid-template:
     "itemJ itemK" 1fr
@@ -138,19 +129,19 @@ li {
     / 2fr 1fr;
 }
 
-.photocollage .tate3 .photo:nth-of-type(1) {
+.photocollage .photocollageTate3 .photo:nth-of-type(1) {
   grid-area: itemJ;
 }
 
-.photocollage .tate3 .photo:nth-of-type(2) {
+.photocollage .photocollageTate3 .photo:nth-of-type(2) {
   grid-area: itemK;
 }
 
-.photocollage .tate3 .photo:nth-of-type(3) {
+.photocollage .photocollageTate3 .photo:nth-of-type(3) {
   grid-area: itemL;
 }
 
-.photocollage .square3 {
+.photocollage .photocollageSquare3 {
   display: grid;
   grid-template:
     "itemM itemM" 1fr
@@ -158,19 +149,19 @@ li {
     / 1fr 1fr;
 }
 
-.photocollage .square3 .photo:nth-of-type(1) {
+.photocollage .photocollageSquare3 .photo:nth-of-type(1) {
   grid-area: itemM;
 }
 
-.photocollage .square3 .photo:nth-of-type(2) {
+.photocollage .photocollageSquare3 .photo:nth-of-type(2) {
   grid-area: itemN;
 }
 
-.photocollage .square3 .photo:nth-of-type(3) {
+.photocollage .photocollageSquare3 .photo:nth-of-type(3) {
   grid-area: itemO;
 }
 
-.photocollage .yoko4 {
+.photocollage .photocollageYoko4 {
   display: grid;
   grid-template:
     "itemP itemP itemP" 2fr
@@ -178,23 +169,23 @@ li {
     / 1fr 1fr 1fr;
 }
 
-.photocollage .yoko4 .photo:nth-of-type(1) {
+.photocollage .photocollageYoko4 .photo:nth-of-type(1) {
   grid-area: itemP;
 }
 
-.photocollage .yoko4 .photo:nth-of-type(2) {
+.photocollage .photocollageYoko4 .photo:nth-of-type(2) {
   grid-area: itemQ;
 }
 
-.photocollage .yoko4 .photo:nth-of-type(3) {
+.photocollage .photocollageYoko4 .photo:nth-of-type(3) {
   grid-area: itemR;
 }
 
-.photocollage .yoko4 .photo:nth-of-type(4) {
+.photocollage .photocollageYoko4 .photo:nth-of-type(4) {
   grid-area: itemS;
 }
 
-.photocollage .tate4 {
+.photocollage .photocollageTate4 {
   display: grid;
   grid-template:
     "itemT itemU" 1fr
@@ -203,23 +194,23 @@ li {
     / 2fr 1fr;
 }
 
-.photocollage .tate4 .photo:nth-of-type(1) {
+.photocollage .photocollageTate4 .photo:nth-of-type(1) {
   grid-area: itemT;
 }
 
-.photocollage .tate4 .photo:nth-of-type(2) {
+.photocollage .photocollageTate4 .photo:nth-of-type(2) {
   grid-area: itemU;
 }
 
-.photocollage .tate4 .photo:nth-of-type(3) {
+.photocollage .photocollageTate4 .photo:nth-of-type(3) {
   grid-area: itemV;
 }
 
-.photocollage .tate4 .photo:nth-of-type(4) {
+.photocollage .photocollageTate4 .photo:nth-of-type(4) {
   grid-area: itemW;
 }
 
-.photocollage .square4 {
+.photocollage .photocollageSquare4 {
   display: grid;
   grid-template:
     "itemX itemY" 1fr
@@ -227,23 +218,23 @@ li {
     / 1fr 1fr;
 }
 
-.photocollage .square4 .photo:nth-of-type(1) {
+.photocollage .photocollageSquare4 .photo:nth-of-type(1) {
   grid-area: itemX;
 }
 
-.photocollage .square4 .photo:nth-of-type(2) {
+.photocollage .photocollageSquare4 .photo:nth-of-type(2) {
   grid-area: itemY;
 }
 
-.photocollage .square4 .photo:nth-of-type(3) {
+.photocollage .photocollageSquare4 .photo:nth-of-type(3) {
   grid-area: itemZ;
 }
 
-.photocollage .square4 .photo:nth-of-type(4) {
+.photocollage .photocollageSquare4 .photo:nth-of-type(4) {
   grid-area: itemZZ;
 }
 
-.photocollage .number5 {
+.photocollage .photocollageNumber5 {
   display: grid;
   grid-template:
     "item1 item3" 2fr
@@ -253,27 +244,27 @@ li {
     / 1fr 1fr;
 }
 
-.photocollage .number5 .photo:nth-of-type(1) {
+.photocollage .photocollageNumber5 .photo:nth-of-type(1) {
   grid-area: item1;
 }
 
-.photocollage .number5 .photo:nth-of-type(2) {
+.photocollage .photocollageNumber5 .photo:nth-of-type(2) {
   grid-area: item2;
 }
 
-.photocollage .number5 .photo:nth-of-type(3) {
+.photocollage .photocollageNumber5 .photo:nth-of-type(3) {
   grid-area: item3;
 }
 
-.photocollage .number5 .photo:nth-of-type(4) {
+.photocollage .photocollageNumber5 .photo:nth-of-type(4) {
   grid-area: item4;
 }
 
-.photocollage .number5 .photo:nth-of-type(5) {
+.photocollage .photocollageNumber5 .photo:nth-of-type(5) {
   grid-area: item5;
 }
 
-.photocollage .more5 {
+.photocollage .photocollageMore5 {
   display: grid;
   grid-template:
     "item1 item3" 2fr
@@ -283,32 +274,32 @@ li {
     / 1fr 1fr;
 }
 
-.photocollage .more5 .photo:nth-of-type(1) {
+.photocollage .photocollageMore5 .photo:nth-of-type(1) {
   grid-area: item1;
 }
 
-.photocollage .more5 .photo:nth-of-type(2) {
+.photocollage .photocollageMore5 .photo:nth-of-type(2) {
   grid-area: item2;
 }
 
-.photocollage .more5 .photo:nth-of-type(3) {
+.photocollage .photocollageMore5 .photo:nth-of-type(3) {
   grid-area: item3;
 }
 
-.photocollage .more5 .photo:nth-of-type(4) {
+.photocollage .photocollageMore5 .photo:nth-of-type(4) {
   grid-area: item4;
 }
 
-.photocollage .more5 .photo:nth-of-type(5) {
+.photocollage .photocollageMore5 .photo:nth-of-type(5) {
   grid-area: item5;
   position: relative;
 }
 
-.photocollage .more5 .photo:nth-of-type(5) img {
+.photocollage .photocollageMore5 .photo:nth-of-type(5) img {
   filter: contrast(30%);
 }
 
-.photocollage .more5 .photo:nth-of-type(5) p {
+.photocollage .photocollageMore5 .photo:nth-of-type(5) p {
   position: absolute;
   top: 50%;
   left: 50%;
