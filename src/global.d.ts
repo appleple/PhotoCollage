@@ -1,4 +1,4 @@
 interface Window {
   PhotoCollage: PhotoCollage | undefined
 }
-declare var window: Window
+declare const window: Window

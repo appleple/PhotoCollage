@@ -48,7 +48,7 @@ class PhotoCollage {
     this.elements.forEach((element) => {
       element.classList.add("photocollage")
       //クラスごとの子要素にある画像をひとまとまりに格納するための配列を作る
-      let photos: Photo[] = [];
+      const photos: Photo[] = [];
       //配列の中に画像情報を格納するメソッド
       this.getSrc(element, photos);
       this.placePhoto(element,photos);
@@ -157,7 +157,7 @@ class PhotoCollage {
       const targetphotos = Array.from(pictures[4].children);
       targetphotos[0].innerHTML += `<p>+${photos.length - 5}件</p>`;
     }
-    };
+    }
   }
 
 
