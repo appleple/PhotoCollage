@@ -1,4 +1,4 @@
-# lang-select
+# PhotoCollage
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://raw.githubusercontent.com/appleple/document-outliner/master/LICENSE)
 
@@ -116,6 +116,6 @@ document.addEventListener('DOMContentLoaded',function(){
           }
         });
         });
-		  new SmartPhoto(".js-smartPhoto")
+        new SmartPhoto(".js-smartPhoto")
 });
 ```
