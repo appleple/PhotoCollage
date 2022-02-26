@@ -24,9 +24,8 @@
   position: absolute;
   top: 0;
   margin: 0;
-  list-style: none;
   padding: 0;
-  /*gap: 4px;*/
+  list-style: none;
   height: 100%;
 }
 
@@ -48,14 +47,14 @@
   top: 0;
 }
 
-.photocollage .yoko1 {
+.photocollage .photocollageYoko1 {
   display: grid;
   grid-template:
     "itemA" 1fr
     /1fr;
 }
 
-.photocollage .yoko1 .photo {
+.photocollage .photocollageYoko1 .photo {
   grid-area: itemA;
 }
 

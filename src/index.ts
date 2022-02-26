@@ -4,7 +4,6 @@
 interface Config {
   gap: string
   srcAttribute: string
-  padding?: string
   margin?: string
   imgClass?:string
   aClass?:string
@@ -27,14 +26,14 @@ interface Photo {
 const defaults: Config = {
   gap: "5px",
   srcAttribute: "src",
-  padding:"0px"
+  margin: "0px 0px 10px 0px",
 }
 
 class PhotoCollage {
   selector:string;
   settings:{gap?: string, srcAttribute?: string};
   data: Config;
-  elements: NodeListOf<Element>;
+  elements: NodeListOf<HTMLDivElement>;
 
   public constructor(selector:string,settings: {gap?: string, srcAttribute?: string}) {
     //ユーザーが最終的に選んだ配列のプロパティーを返す
@@ -91,7 +90,7 @@ class PhotoCollage {
  * @param element
  * @param photos
  */
-  placePhoto(element:Element,photos: Photo[]) {
+  placePhoto(element:HTMLDivElement,photos: Photo[]) {
     //全部の要素消す
     while (element.firstChild) {
       element.removeChild(element.firstChild);
@@ -128,9 +127,8 @@ class PhotoCollage {
 
     parentElement.appendChild(childElement);
     element.appendChild(parentElement);
-    //画像の幅を真ん中に設定
-    parentElement.style.margin = this.data.margin ?? "";
-    parentElement.style.padding = this.data.padding ?? "";
+    //レイアウトオプション
+    element.style.margin = this.data.margin ?? "";
     parentElement.style.gap = this.data.gap ?? "";
     });
     //ulにクラスをつけて、縦横枚数を判別
@@ -141,10 +139,7 @@ class PhotoCollage {
       parentElement.classList.add("photocollageYoko" + [photos.length]);
     } else if (photos[0].width < photos[0].height && photos.length < 5) {
       parentElement.classList.add("photocollageTate" + [photos.length]);
-    } else if (photos[0].width === photos[0].height && photos.length < 5) {
-      parentElement.classList.add("photocollageSquare" + [photos.length]);
-    } else if (photos[0].width === photos[0].height && 2 < photos.length) {
-      //ここおかしい
+    } else if (photos[0].width === photos[0].height && 2 < photos.length && photos.length < 5) {
       parentElement.classList.add("photocollageSquare" + [photos.length]);
     } else if (photos.length === 5) {
       parentElement.classList.add("photocollageNumber" + [photos.length]);
