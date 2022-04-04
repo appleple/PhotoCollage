@@ -30,11 +30,11 @@ $(function(){
 At the time of five vertically long sheets
 ```html
 <div class="js-photocollage">
-  <div data-src="example1.jpg" width="480" height="640"></div>
-  <div data-src="example2.jpg" width="480" height="640"></div>
-  <div data-src="example3.jpg" width="480" height="640"></div>
-  <div data-src="example4.jpg" width="480" height="640"></div>
-  <div data-src="example5.jpg" width="480" height="640"></div>
+  <img src="example1.jpg" width="480" height="640">
+  <img src="example2.jpg" width="480" height="640">
+  <img src="example3.jpg" width="480" height="640">
+  <img src="example4.jpg" width="480" height="640">
+  <img src="example5.jpg" width="480" height="640">
 </div>
 <link rel="stylesheet" href="./css/photocollage.css">
 <script src="./js/photocollage.bundle.js"></script>
