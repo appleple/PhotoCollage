@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
 <table>
 	<tr>
-		<th>変数</th>
+		<th>変数名</th>
 		<th>説明</th>
 		<th>デフォルト値</th>
 	</tr>
@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded',function(){
 	</tr>
 	<tr>
 		<td>aAttribute</td>
-		<td>a tag attribute</td>
-		<td>none</td>
+		<td>aタグの属性</td>
+		<td>なし</td>
 	</tr>
 </table>
 
