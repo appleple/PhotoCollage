@@ -49,39 +49,39 @@ document.addEventListener('DOMContentLoaded',function(){
 
 <table>
 	<tr>
-		<th>変数名</th>
-		<th>説明</th>
-		<th>デフォルト値</th>
+		<th>variable</th>
+		<th>description</th>
+		<th>default</th>
 	</tr>
 	<tr>
 		<td>gap</td>
-		<td>画像間の間隔</td>
+		<td>Spacing between images</td>
 		<td>5px</td>
 	</tr>
 	<tr>
 		<td>srcAttribute</td>
-		<td>画像ソース</td>
+		<td>Image source</td>
 		<td>src</td>
 	</tr>
 	<tr>
 		<td>margin</td>
-		<td>アルバムの間隔</td>
+		<td>Album spacing</td>
 		<td>0px 0px 10px 0px</td>
 	</tr>
 	<tr>
 		<td>imgClass</td>
-		<td>imgタグのクラス</td>
-		<td>なし</td>
+		<td>img tag class</td>
+		<td>none</td>
 	</tr>
 	<tr>
 		<td>aClass</td>
-		<td>aタグのクラス</td>
-		<td>なし</td>
+		<td>a tag class</td>
+		<td>none</td>
 	</tr>
 	<tr>
 		<td>aAttribute</td>
-		<td>aタグの属性</td>
-		<td>なし</td>
+		<td>a tag attribute</td>
+		<td>none</td>
 	</tr>
 </table>
 
