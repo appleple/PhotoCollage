@@ -31,11 +31,11 @@ const defaults: Config = {
 
 class PhotoCollage {
   selector:string;
-  settings:{gap?: string, srcAttribute?: string};
+  settings:Partial<Config>;
   data: Config;
   elements: NodeListOf<HTMLDivElement>;
 
-  public constructor(selector:string,settings: {gap?: string, srcAttribute?: string}) {
+  public constructor(selector:string,settings: Partial<Config>) {
     //ユーザーが最終的に選んだ配列のプロパティーを返す
     this.selector = ""
     this.settings = {}
@@ -127,24 +127,29 @@ class PhotoCollage {
 
     parentElement.appendChild(childElement);
     element.appendChild(parentElement);
+    });
     //レイアウトオプション
     element.style.margin = this.data.margin ?? "";
     parentElement.style.gap = this.data.gap ?? "";
-    });
     //ulにクラスをつけて、縦横枚数を判別
     if (photos.length === 0){
       return;
     }
-    if (photos[0].width >= photos[0].height && photos.length < 5) {
-      parentElement.classList.add("photocollageYoko" + [photos.length]);
-    } else if (photos[0].width < photos[0].height && photos.length < 5) {
-      parentElement.classList.add("photocollageTate" + [photos.length]);
-    } else if (photos[0].width === photos[0].height && 2 < photos.length && photos.length < 5) {
-      parentElement.classList.add("photocollageSquare" + [photos.length]);
-    } else if (photos.length === 5) {
-      parentElement.classList.add("photocollageNumber" + [photos.length]);
-    } else {
+    //width/height は属性由来の文字列なので数値化して比較する
+    const width = Number(photos[0].width);
+    const height = Number(photos[0].height);
+    const count = photos.length;
+    if (count === 5) {
+      parentElement.classList.add("photocollageNumber" + count);
+    } else if (count > 5) {
       parentElement.classList.add("photocollageMore5");
+    } else if (width === height && count > 2) {
+      //正方形（3〜4枚）。横長判定より先に評価しないと到達できない
+      parentElement.classList.add("photocollageSquare" + count);
+    } else if (width >= height) {
+      parentElement.classList.add("photocollageYoko" + count);
+    } else {
+      parentElement.classList.add("photocollageTate" + count);
     }
     //ulの中のdivを指定し、六枚以上の時のpタグで残り枚数表示
     const pictures = Array.from(parentElement.children);
