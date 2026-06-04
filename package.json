@@ -1,6 +1,6 @@
 {
   "name": "@appleple/photocollage",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A utility that changes the display method according to the aspect ratio and order of images.",
   "packageManager": "pnpm@11.5.1",
   "type": "module",

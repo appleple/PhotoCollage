@@ -18,6 +18,26 @@ pnpm lint         # run ESLint
 
 The build outputs `dist/photo-collage.bundle.js` (UMD) and `dist/photo-collage.es.js` (ES module). The stylesheet used by the demo lives in `examples/photocollage.css` and is not part of the published package — copy it into your own project as needed.
 
+## Installation
+
+Install from npm:
+
+```bash
+npm install @appleple/photocollage
+# or: pnpm add @appleple/photocollage
+# or: yarn add @appleple/photocollage
+```
+
+Then import it as an ES module:
+
+```js
+import PhotoCollage from "@appleple/photocollage";
+
+document.addEventListener("DOMContentLoaded", () => {
+  new PhotoCollage(".js-photocollage");
+});
+```
+
 ## Usage
 Include the PhotoCollage .js/.css file in your site.
 ```html
