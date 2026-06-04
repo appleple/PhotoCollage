@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Photo layout sample</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    />
+    <link rel="stylesheet" href="./photocollage.css" />
+    <script type="module">
+      import PhotoCollage from "/src/index.ts";
+      document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.getElementsByClassName("js-photocollage");
+        Array.from(elements).forEach((element, index) => {
+          element.classList.add("js-photoCollage-" + index);
+          new PhotoCollage(".js-photoCollage-" + index, {
+            srcAttribute: "data-src",
+            gap: "5px",
+            margin: "0px 0px 20px 0px",
+            aClass: "js-smartPhoto",
+            imgClass: "js-lazy-load",
+            aAttribute: {
+              "data-group": "group-" + index,
+              "data-rel": "group-" + index,
+            },
+          });
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <h1>Photo layout sample</h1>
+
+    <h2 class="title">横長2枚の時</h2>
+    <div class="js-photocollage">
+      <div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p01/640/480/"
+            class="js-smartPhoto"
+            data-group="yoko3"
+          ><img
+              data-src="https://picsum.photos/seed/p01/640/480/"
+              width="640"
+              height="480"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p02/640/480/"
+            class="js-smartPhoto"
+            data-group="yoko3"
+            ><img
+              data-src="https://picsum.photos/seed/p02/640/480/"
+              width="640"
+              height="480"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="title">縦長2枚の時</h2>
+    <div class="js-photocollage">
+      <div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p01/480/640/"
+            class="js-smartPhoto"
+            data-group="yoko3"
+            ><img
+              data-src="https://picsum.photos/seed/p01/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p02/480/640/"
+            class="js-smartPhoto"
+            data-group="yoko3"
+            ><img
+              data-src="https://picsum.photos/seed/p02/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="title">横長3枚の時</h2>
+    <div class="js-photocollage">
+      <div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p01/640/480/"
+            class="js-smartPhoto"
+            data-group="yoko3"
+            ><img
+              data-src="https://picsum.photos/seed/p01/640/480/"
+              width="640"
+              height="480"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p02/640/480/"
+            class="js-smartPhoto"
+            data-group="yoko3"
+            ><img
+              data-src="https://picsum.photos/seed/p02/640/480/"
+              width="640"
+              height="480"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p03/640/480/"
+            class="js-smartPhoto"
+            data-group="yoko3"
+            ><img
+              data-src="https://picsum.photos/seed/p03/640/480/"
+              width="640"
+              height="480"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="title">縦長3枚の時</h2>
+    <div class="js-photocollage">
+      <div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p11/480/640/"
+            class="js-smartPhoto"
+            data-group="tate3"
+            ><img
+              data-src="https://picsum.photos/seed/p11/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p12/480/640/"
+            class="js-smartPhoto"
+            data-group="tate3"
+            ><img
+              data-src="https://picsum.photos/seed/p12/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p13/480/640/"
+            class="js-smartPhoto"
+            data-group="tate3"
+            ><img
+              data-src="https://picsum.photos/seed/p13/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="title">正方形3枚の時</h2>
+    <div class="js-photocollage">
+      <div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p21/480/480/"
+            class="js-smartPhoto"
+            data-group="square3"
+            ><img
+              data-src="https://picsum.photos/seed/p21/480/480/"
+              width="480"
+              height="480"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p22/480/480/"
+            class="js-smartPhoto"
+            data-group="square3"
+            ><img
+              data-src="https://picsum.photos/seed/p22/480/480/"
+              width="480"
+              height="480"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p23/480/480/"
+            class="js-smartPhoto"
+            data-group="square3"
+            ><img
+              data-src="https://picsum.photos/seed/p23/480/480/"
+              width="480"
+              height="480"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="title">横長4枚の時</h2>
+    <div class="js-photocollage">
+      <div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p01/640/480/"
+            class="js-smartPhoto"
+            data-group="yoko4"
+            ><img
+              data-src="https://picsum.photos/seed/p01/640/480/"
+              width="640"
+              height="480"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p02/640/480/"
+            class="js-smartPhoto"
+            data-group="yoko4"
+            ><img
+              data-src="https://picsum.photos/seed/p02/640/480/"
+              width="640"
+              height="480"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p03/640/480/"
+            class="js-smartPhoto"
+            data-group="yoko4"
+            ><img
+              data-src="https://picsum.photos/seed/p03/640/480/"
+              width="640"
+              height="480"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p04/640/480/"
+            class="js-smartPhoto"
+            data-group="yoko4"
+            ><img
+              data-src="https://picsum.photos/seed/p04/640/480/"
+              width="640"
+              height="480"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="title">縦長4枚の時</h2>
+    <div class="js-photocollage">
+      <div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p11/480/640/"
+            class="js-smartPhoto"
+            data-group="tate4"
+            ><img
+              data-src="https://picsum.photos/seed/p11/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p12/480/640/"
+            class="js-smartPhoto"
+            data-group="tate4"
+            ><img
+              data-src="https://picsum.photos/seed/p12/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p13/480/640/"
+            class="js-smartPhoto"
+            data-group="tate4"
+            ><img
+              data-src="https://picsum.photos/seed/p13/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p14/480/640/"
+            class="js-smartPhoto"
+            data-group="tate4"
+            ><img
+              data-src="https://picsum.photos/seed/p14/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="title">正方形4枚の時</h2>
+    <div class="js-photocollage">
+      <div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p21/480/480/"
+            class="js-smartPhoto"
+            data-group="square4"
+            ><img
+              data-src="https://picsum.photos/seed/p21/480/480/"
+              width="480"
+              height="480"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p22/480/480/"
+            class="js-smartPhoto"
+            data-group="square4"
+            ><img
+              data-src="https://picsum.photos/seed/p22/480/480/"
+              width="480"
+              height="480"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p23/480/480/"
+            class="js-smartPhoto"
+            data-group="square4"
+            ><img
+              data-src="https://picsum.photos/seed/p23/480/480/"
+              width="480"
+              height="480"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p24/480/480/"
+            class="js-smartPhoto"
+            data-group="square4"
+            ><img data-src="https://picsum.photos/seed/p24/480/480/"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="title">縦長5枚の時</h2>
+    <div class="js-photocollage">
+      <div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p01/480/640/"
+            class="js-smartPhoto"
+            data-group="tate5"
+            ><img
+              data-src="https://picsum.photos/seed/p01/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p02/480/640/"
+            class="js-smartPhoto"
+            data-group="tate5"
+            ><img
+              data-src="https://picsum.photos/seed/p02/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p03/480/640/"
+            class="js-smartPhoto"
+            data-group="tate5"
+            ><img
+              data-src="https://picsum.photos/seed/p03/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p04/480/640/"
+            class="js-smartPhoto"
+            data-group="tate5"
+            ><img
+              data-src="https://picsum.photos/seed/p04/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p05/480/640/"
+            class="js-smartPhoto"
+            data-group="tate5"
+            ><img
+              data-src="https://picsum.photos/seed/p05/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="title">縦長6枚の時</h2>
+    <div class="js-photocollage">
+      <div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p01/480/640/"
+            class="js-smartPhoto"
+            data-group="tate6"
+            ><img
+              data-src="https://picsum.photos/seed/p01/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p02/480/640/"
+            class="js-smartPhoto"
+            data-group="tate6"
+            ><img
+              data-src="https://picsum.photos/seed/p02/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p03/480/640/"
+            class="js-smartPhoto"
+            data-group="tate6"
+            ><img
+              data-src="https://picsum.photos/seed/p03/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p04/480/640/"
+            class="js-smartPhoto"
+            data-group="tate6"
+            ><img
+              data-src="https://picsum.photos/seed/p04/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p05/480/640/"
+            class="js-smartPhoto"
+            data-group="tate6"
+            ><img
+              data-src="https://picsum.photos/seed/p05/480/640/"
+              width="480"
+              height="640"
+            />
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://picsum.photos/seed/p06/480/640/"
+            class="js-smartPhoto"
+            data-group="tate6"
+            ><img
+              data-src="https://picsum.photos/seed/p06/480/640/"
+              width="480"
+              height="640"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      photo01.jpg : 横長
+      photo11.jpg : 縦長
+      photo21.jpg : 正方形
+    -->
+    <h2 class="title">縦長8枚の時</h2>
+
+    <div class="js-photocollage">
+      <div
+        data-src="https://picsum.photos/seed/p01/1000/1000"
+        width="480"
+        height="640"
+      ></div>
+      <div
+        data-src="https://picsum.photos/seed/p02/1000/1000"
+        width="480"
+        height="640"
+      ></div>
+      <div
+        data-src="https://picsum.photos/seed/p03/1000/1000"
+        width="480"
+        height="640"
+      ></div>
+      <div
+        data-src="https://picsum.photos/seed/p04/1000/1000"
+        width="480"
+        height="640"
+      ></div>
+      <div
+        data-src="https://picsum.photos/seed/p05/1000/1000"
+        width="480"
+        height="640"
+      ></div>
+      <div
+        data-src="https://picsum.photos/seed/p05/1000/1000"
+        width="480"
+        height="640"
+      ></div>
+      <div
+        data-src="https://picsum.photos/seed/p05/1000/1000"
+        width="480"
+        height="640"
+      ></div>
+      <div
+        data-src="https://picsum.photos/seed/p05/1000/1000"
+        width="480"
+        height="640"
+      ></div>
+    </div>
+  </body>
+</html>

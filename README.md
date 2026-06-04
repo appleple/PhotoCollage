@@ -4,6 +4,20 @@
 
 A utility that changes the display method according to the aspect ratio and order of images when uploading multiple images at once.
 
+## Development
+
+This project uses [Vite](https://vite.dev/) and [pnpm](https://pnpm.io/) (requires Node.js >= 22.12). pnpm is managed via [Corepack](https://nodejs.org/api/corepack.html); run `corepack enable pnpm` once to activate the version pinned in `package.json`.
+
+```bash
+pnpm install      # install dependencies
+pnpm dev          # start the dev server (demo: examples/index.html)
+pnpm build        # build the library into dist/
+pnpm typecheck    # type-check with tsc
+pnpm lint         # run ESLint
+```
+
+The build outputs `dist/photo-collage.bundle.js` (UMD) and `dist/photo-collage.es.js` (ES module). The stylesheet used by the demo lives in `examples/photocollage.css` and is not part of the published package — copy it into your own project as needed.
+
 ## Usage
 Include the PhotoCollage .js/.css file in your site.
 ```html
