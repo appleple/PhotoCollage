@@ -8,6 +8,9 @@ interface Config {
   imgClass?:string
   aClass?:string
   aAttribute?: { [key:string] : string }
+  // 6枚以上のとき5枚目に重ねる残り枚数の表示文言を返す関数。
+  // 既定は "+N"（単位なし）。例: (n) => `+${n}件` で「+3件」と表示できる。
+  overflowLabel?: (remaining: number) => string
 }
 
 /**
@@ -18,6 +21,7 @@ interface Photo {
   href:string
   width:string
   height:string
+  alt:string
 }
 
 /**
@@ -31,11 +35,11 @@ const defaults: Config = {
 
 class PhotoCollage {
   selector:string;
-  settings:{gap?: string, srcAttribute?: string};
+  settings:Partial<Config>;
   data: Config;
   elements: NodeListOf<HTMLDivElement>;
 
-  public constructor(selector:string,settings: {gap?: string, srcAttribute?: string}) {
+  public constructor(selector:string,settings: Partial<Config>) {
     //ユーザーが最終的に選んだ配列のプロパティーを返す
     this.selector = ""
     this.settings = {}
@@ -76,6 +80,7 @@ class PhotoCollage {
           href: a?.getAttribute("href") ?? "",
           width: element.getAttribute("width") ?? "",
           height: element.getAttribute("height") ?? "",
+          alt: element.getAttribute("alt") ?? "",
         })
       }
       //深さ優先探査、引数のelementに入る要素が下の階層の要素になっている
@@ -91,6 +96,11 @@ class PhotoCollage {
  * @param photos
  */
   placePhoto(element:HTMLDivElement,photos: Photo[]) {
+    //画像が1枚も見つからない場合は何もしない（元の内容を壊さない安全策）。
+    //srcAttribute の設定ミス等で中身が消える事故を防ぐ。
+    if (photos.length === 0) {
+      return;
+    }
     //全部の要素消す
     while (element.firstChild) {
       element.removeChild(element.firstChild);
@@ -106,6 +116,15 @@ class PhotoCollage {
       imgElement.classList.add(this.data.imgClass);
     }
     imgElement.setAttribute("src",photo.src);
+    //alt は元画像から引き継ぐ（無い場合は空文字 = 装飾画像扱い）
+    imgElement.setAttribute("alt",photo.alt);
+    //width/height も引き継ぎ、レイアウトシフト(CLS)を防ぐ
+    if (photo.width !== "") {
+      imgElement.setAttribute("width",photo.width);
+    }
+    if (photo.height !== "") {
+      imgElement.setAttribute("height",photo.height);
+    }
     //aタグの生成
     const aElement = document.createElement("a");
     if (this.data.aClass != undefined){
@@ -127,30 +146,42 @@ class PhotoCollage {
 
     parentElement.appendChild(childElement);
     element.appendChild(parentElement);
+    });
     //レイアウトオプション
     element.style.margin = this.data.margin ?? "";
     parentElement.style.gap = this.data.gap ?? "";
-    });
     //ulにクラスをつけて、縦横枚数を判別
-    if (photos.length === 0){
-      return;
-    }
-    if (photos[0].width >= photos[0].height && photos.length < 5) {
-      parentElement.classList.add("photocollageYoko" + [photos.length]);
-    } else if (photos[0].width < photos[0].height && photos.length < 5) {
-      parentElement.classList.add("photocollageTate" + [photos.length]);
-    } else if (photos[0].width === photos[0].height && 2 < photos.length && photos.length < 5) {
-      parentElement.classList.add("photocollageSquare" + [photos.length]);
-    } else if (photos.length === 5) {
-      parentElement.classList.add("photocollageNumber" + [photos.length]);
-    } else {
+    //width/height は属性由来の文字列なので数値化して比較する
+    const width = Number(photos[0].width);
+    const height = Number(photos[0].height);
+    const count = photos.length;
+    if (count === 5) {
+      parentElement.classList.add("photocollageNumber" + count);
+    } else if (count > 5) {
       parentElement.classList.add("photocollageMore5");
+    } else if (width === height && count > 2) {
+      //正方形（3〜4枚）。横長判定より先に評価しないと到達できない
+      parentElement.classList.add("photocollageSquare" + count);
+    } else if (width >= height) {
+      parentElement.classList.add("photocollageYoko" + count);
+    } else {
+      parentElement.classList.add("photocollageTate" + count);
     }
     //ulの中のdivを指定し、六枚以上の時のpタグで残り枚数表示
     const pictures = Array.from(parentElement.children);
     if (pictures.length > 5) {
-      const targetphotos = Array.from(pictures[4].children);
-      targetphotos[0].innerHTML += `<p>+${photos.length - 5}件</p>`;
+      //5枚目（index 4）の中の a 要素に残り枚数の p を追加する
+      const overflowAnchor = pictures[4].children[0];
+      if (overflowAnchor) {
+        const remaining = photos.length - 5;
+        //既定は単位なしの "+N"。overflowLabel 指定時はその戻り値を使う
+        const label = this.data.overflowLabel
+          ? this.data.overflowLabel(remaining)
+          : `+${remaining}`;
+        const p = document.createElement("p");
+        p.textContent = label;  //innerHTML を使わず安全にテキスト設定
+        overflowAnchor.appendChild(p);
+      }
     }
     }
   }
